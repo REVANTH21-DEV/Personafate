@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<!-- viewport-fit=cover + safe-area handling = notch-friendly on iPhone/Android -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0f172a">
+<link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjogIlBlcnNvbmFGYXRlIiwgInNob3J0X25hbWUiOiAiUGVyc29uYUZhdGUiLCAiZGVzY3JpcHRpb24iOiAiRGlzY292ZXIgd2hvIHlvdSBhcmUgXHUyMDE0IGFuZCB3aGVyZSB5b3UncmUgaGVhZGVkLiIsICJzdGFydF91cmwiOiAiLi9wZXJzb25hZmF0ZS5odG1sIiwgInNjb3BlIjogIi4vIiwgImRpc3BsYXkiOiAic3RhbmRhbG9uZSIsICJvcmllbnRhdGlvbiI6ICJwb3J0cmFpdCIsICJiYWNrZ3JvdW5kX2NvbG9yIjogIiMwZjE3MmEiLCAidGhlbWVfY29sb3IiOiAiIzBmMTcyYSIsICJpY29ucyI6IFt7InNyYyI6ICJkYXRhOmltYWdlL3BuZztiYXNlNjQsaVZCT1J3MEtHZ29BQUFBTlNVaEVVZ0FBQU1BQUFBREFDQUlBQUFEZHZ2dFFBQUFIdGtsRVFWUjRuTzNkVDJ3VVpSakg4WGQyNmJac29RVUtJUUg4bHhTamNEQ0ttT0FGalhJd2tUUW1uSXczWTNvd0dpOUdqSWxlakRFeG5qeDVORVJEREVhNUVBMEJvaGhCTVI3NFk2STJvbEtrUktUZGJXbTNzenZ6ZWhnekxOMld6dXd6ODc3UDg4N3Zjd1dXbVdlLys4N003blRyRFc3Y3BnQzZWYks5QVNBYkFnSVNCQVFrQ0FoSUVCQ1FJQ0FnUVVCQWdvQ0FCQUVCQ1FJQ0VnUUVKQWdJU0JBUWtDQWdJRUZBUUlLQWdBUUJBUWtDQWhJRUJDUUlDRWdRRUpBZ0lDQkJRRUNDZ0lBRUFRRUpBZ0lTQkFRa0NBaElFQkNRSUNBZ1FVQkFnb0NBQkFFQnlRcmJHOERGdnBGVHFmNytvY083Y3RvU1diekNmc1ZkMm1KdXI3QTlGU3VnYktOWlNxRmlLa1JBWnJycFZJU1NYQTdJVmplZEhDN0p6WUQ0cE5QT3lZeWNDb2huTjUxY0tzbWQ5NEdrMUtORWJlcXlYRmlCNUQ0ZkRpeEZzZ09TbTA0NzBSa0pQb1M1VVk4U3ZpTWlWeURSRTc4TmlVdVJ2QlhJMVhxVXpGMFRGcERFRWFjaWJnZkZITUxFVFpaSXl1Rk14Z3BVdEhxVW5GMFdFSkNVVVdaT3hJNXpEMGpFRVBQRGYvZFpCOFIvZkFZd0h3TGZnSmdQemlUT28yQWFFT2VSV2NGMklCd0RZanNzdTNpT2hWMUFQTWZFQk1QaHNBc0laT0VWRU1OWEdEZmNSc1FvSUc2allZdlZvTGdFeEdvby9QRVpGNWVBUUNnV0FmRjVQUW5DWkdqMkEySXlDSWs0ak01K1FDQ2E1WUE0dklaRXN6NUF4NzhmYVBTRmxUc2Y3c25rb2JSV3paWnFOZlhjbks1UDYxcE5UMHlFVnlhQ2l4ZURLeE9oMXBuOEovTFlETWo2cXljVnoxT1ZIbFhwOGFwVmIyaElLYVhVQS8vLzBjeU12dkJ6Njh5UHpmTVhXcTJXNlEzYk4zTEs0djJ2MXU2Sk5sTlBoaXRRRXZXNlB2RzFmK3k0UHp0cmVrV3kxUkJPb3JNME1PQ043TzE5NSsxVmorMnVlSjd0clRFQ0FXVnZWYi8zM0xOOXI3eFVYYjNhL1lqc0JDVHI3S2M3MjdldmVHTi8vNFlOaGlac2E2UllnWEswZm4xcC82djk2OWE1UEdRTCsxYUU1U2MyT09pOS9PTEtTc1hFc2N6S1lGMStjVEN4WlV2NW1aRmUyMXVSRndSa3dwTlBWRFp2Y25QVXB2ZXFVTWV2bU9lcHZVK2JXSVRNajlmeGp6SlMrZWpBM01sdm00ditVVitmVjYxNm16ZVZob2ZMais2cXJGMlQrcHptb1FkN0JnWWE5YnBySDNtNHVhNW1ydEhRMTYrSDU4NjNQdjlpL3JYWHB6ODUyUEQ5ZENtVVNzcmtlK0xHR0EzSWplTlhHS3JqSi96MzNwK2RuMC9YMFBiN1RhejNob2VNRmFoTEYvOElEbnpjU1BWUGhvZkxPVzJNUlFpb2U2dS84cWIrVExFSVZhdmUzckIzejJSbHoyUWx2NjB5RENmUnFiVS8vWmQvQ05iY2xXS0cvUnU5UmsyM1A4alJ0WDYybTJlWXVSWElnUk9nenNYajM3RXcxU1AwcmxyK01lbE1qaG9yVUNKTFBjZU5xWFNQVSs1ZC9Qby9lbnlKcXhFQ1dzWXl5ME9tbjNGSnpBZ24wYmV6N01HbGJ6RGRBd1lKcnZ4bG5XSWpvQ1VsZVNLSDdrMDN3UG1aelA1ckpoeS8zYWs3Q1U5c1BVOXRlU1RkV3pzM3JpYTk3Q2VlWEJzYk9GYWdoWkkvYlhmdkxnL2VrZUlreUovUjBUVjhIaHRqQ3dLNlJmSW5iR2hyYWNmejZUN2J1dlpMTjUra01tOElBZDIwYlRiUk5hbFhWbHVmS2ovK1ZxV2M4Z2FOaWJOQk41dkZ1eUZjeGlleW9rOVYrcjNCTzczMTk1WHUyVjFldVM3MTVic08xYVh2MHIzcjJHN1BaSVhuNVQwQ3Vtbm5hTS9PMGJ6dXVCai9Qa2g3QWlRQ0RtRW1hSzB1ZkViOW1XZWVCeklFWk1KdlIxcTF2ekpZZmhnMmhJQnlWN3Vreng3TTdDc1h1RFdFZ1BMVnFPbVQ3L3JCdk8zdHlBMEN5dEhzTlgzOFRmL0dQeG1mTzdOYWhIQVZscGVyNThMVEh6UWJVdzVlZWJWRFFObnpiK2p6bjdiR3ZnenkrOW95UG04TElhQXN6ZGYxMk5IZzF5T0JQKzM0d2hORFFCbndwL1hFMmZEUzZmRHZuNEp3OFo5TXpCNlRSUWdCSmFaVjJGSkJTelZuZFdOS3owMnE2U3RoZlZ4Zkh3dHI0MW9WWmNWWnlGQkFodzd2NG45TDBKa1BtNzhmNi9MelRtNk1mV1VpTHVNRjQzQTlqNENBQkFFQkNRSUNFbk1CV2Z3MmRZY3RlaHBrY3RSWWdZQUVBUUVKQWdJU293SGhOTWdBdzBQR0NnUWtDQWhJVEFlRW8xaXV6SThYS3hDUUlDQWdzUkFRam1JNXNUSllyRUJBWWljZ0xFSlppZTlxeFMvZEJaRVFFSkJZKzczeHl0NFhKM0s0RXpRcjBTSE00aW1CelJYSTFtNXorR21ZVEZpdlIrRVFCa1NXQThMbEdKSDFBUlowQlhMZ0tNWmtGK3dIWlAwMUpCZUgwZGtQU0ZrYUJKTlhjSGVPcnZVNTFLT1lCQVJ5Y1FrSWkxQnlmSllmeFNjZ3hlT0lMZ0tyUVRFS1NOa1lqYmhGYVBTYkhiWTM0UmE4QXJKQ1VFTU1ONVZkUURnWldncXJVNThZdTRBVXMyTThIenpId2pFZ2haT2hEdHhPZldKTUExSm9xQTNiZWhUbmdCUWFVa3J4cmtjeEQwZ1Z2aUhtOVNpN2R5UW1aK1hlUmJzM0x2Szg1dXJFZlFXS0ZPM2FYa285U3NvS0ZETy9GSmxmaC9nZnR0b0pDMGc1ZlRnVHRQREU1QVdrWFB4eERnNjN4M2RIWkVBUk56S1NtMDVFY0VES1hrTVJTa250WitoeTYxSFNBNHB3K0RVdVNXTHF2S3dUblU3RWhZQWlIREpLem9GMElqTGVCMHBDMEZNaWFGT1g1YzRLMUk3bmF1UlNOekUzQTRyd3ljakpkQ0l1QnhTelZaTEQzY1FLRVZETVRFbEY2Q1pXcklEYVpSdFRvYUpwVjl5QUZramJVMkdMV1FBQkFZazc3d09CRlFnSVNCQVFrQ0FnSUVGQVFJS0FnQVFCQVFrQ0FoSUVCQ1FJQ0VnUUVKQWdJQ0JCUUVDQ2dJQUVBUUVKQWdJU0JBUWtDQWhJRUJDUUlDQWdRVUJBZ29DQUJBRUJDUUlDRWdRRUpBZ0lTQkFRa0NBZ0lFRkFRSUtBZ0FRQkFRa0NBaElFQkNUL0FSdE1XM3RNZCtTUEFBQUFBRWxGVGtTdVFtQ0MiLCAic2l6ZXMiOiAiMTkyeDE5MiIsICJ0eXBlIjogImltYWdlL3BuZyJ9LCB7InNyYyI6ICJkYXRhOmltYWdlL3BuZztiYXNlNjQsaVZCT1J3MEtHZ29BQUFBTlNVaEVVZ0FBQWdBQUFBSUFDQUlBQUFCN0drT3RBQUFWcFVsRVFWUjRuTzNkYTZ4bVYxbkE4ZjJlTSs4NU05TnBad2JianNDVVFpaXRMWmhJRzFvS3RKRm9BUTJ4UVd2VW9CS0RTUU5LZ25oRmFCcVNlcjk4ODZOR1AxZzFGclFtaGt1SkxVVm9xOGlsZ1FFR2JDa3paYWFkdGpOelR1ZHl6bmt2ZnBneU04NmN5M3ZaZTYrMTkvUDdoUzlJR2JhWnRaNy9YdnU5ZGJidnVxWUFJSjZaMUJjQVFCb0NBQkNVQUFBRUpRQUFRUWtBUUZBQ0FCQ1VBQUFFSlFBQVFRa0FRRkFDQUJDVUFBQUVKUUFBUVFrQVFGQUNBQkNVQUFBRUpRQUFRUWtBUUZBQ0FCQ1VBQUFFSlFBQVFRa0FRRkFDQUJDVUFBQUVKUUFBUVFrQVFGQUNBQkNVQUFBRUpRQUFRUWtBUUZBQ0FCQ1VBQUFFSlFBQVFRa0FRRkFDQUJDVUFBQUVKUUFBUVFrQVFGQUNBQkNVQUFBRUpRQUFRUWtBUUZBQ0FCQ1VBQUFFSlFBQVFRa0FRRkFDQUJDVUFBQUVKUUFBUVFrQVFGQUNBQkNVQUFBRUpRQUFRUWtBUUZBQ0FCQ1VBQUFFSlFBQVFRa0FRRkFDQUJDVUFBQUVKUUFBUVFrQVFGQUNBQkNVQUFBRUpRQUFRUWtBUUZBQ0FCQ1VBQUFFSlFBQVFRa0FRRkFDQUJDVUFBQUVKUUFBUVFrQVFGQUNBQkNVQUFBRUpRQUFRUWtBUUZBQ0FCQ1VBQUFFSlFBQVFRa0FRRkFDQUJDVUFBQUVKUUFBUVFrQVFGQUNBQkNVQUFBRUpRQUFRUWtBUUZBQ0FCQ1VBQUFFdFNuMUJVQWxicnYxb1JML3RIdnV2YkhFUHcweTBkbSs2NXJVMXdBVEtuZktUMFliYUM0Qm9ERnlHUGVqa0FTYVFnRElWRlBHL1Nna2dUd0pBQmxwMDlCZml4aVFEd0Vnc1FoRGZ5MWlRRm9DUUFLUmgvNWF4SUQ2Q1FEMU1mZEhvUVRVUmdDb25May9HU1dnYWdKQVZjejlzaWdCRlJFQVNtYnVWMGNKS0pjQVVCcWp2eDR5UUZrRWdHbVorNmtvQVZNU0FDWm45T2RBQnBpWUFEQUpvejgzTXNBRUJJRHhHUDA1a3dIR0lnQ014Tnh2RmlWZ0ZBTEFCb3orNXBJQjFpY0FyTW5vYndjWllDMStFNWpWbWY2dDRhK1N0VGdCY0M3em9xMGNCVGlIQUhDRzBSK0JESENhQUZBVVJuODhNa0RoTlFBSzB6OGtmK2tVVGdEQm1RSTRDa1FtQUVFWi9aeE5CbUx5Q0NnaTA1OXpXQkl4T1FIRVlwK3pQa2VCVUp3QUFqSDkyWkJGRW9vVFFBaDJOZU55RklqQUNhRDlUSDhtWU5sRUlBQXRaeHN6TVl1bjlUd0NhaTI3bDdKNEhOUldUZ0R0WlBwVElzdXByUVNnaFd4WFNtZFJ0WkpIUUsxaWwxSTFqNFBheEFtZ1BVeC9hbUNadFlrQXRJUnRTVzBzdHRZUWdEYXdJYW1aSmRjT1hnTm9OdnVRdEx3azBHaE9BQTFtK3BPY1JkaG9BdEJVTmg2WnNCU2JTd0FheVpZakt4WmtRd2xBODloc1pNaXliQ0lCYUJqYmpHeFpuSTBqQUUxaWc1RTVTN1JaQktBeGJDMGF3VUp0RUFGb0JwdUtCckZjbTBJQUdzQjJvbkVzMmtZUWdOelpTRFNVcFpzL0FjaWFMVVNqV2NDWkU0QjgyVHkwZ0dXY013SElsRzFEYTFqTTJSS0FITmt3dEl3bG5TY0J5STZ0UWl0WjJCa1NnTHpZSkxTWTVaMGJBY2lJN1VIcldlUlpFWUJjMkJnRVlhbm5Rd0FBZ2hLQUxMZ25JaFFMUGhNQ2tKN05RRUNXZlE0RUlESGJnTEFzL3VRRUlDVWJnT0JzZ2JRRUFDQW9BVWpHdlE4VU5rSlNBcENHUlErbjJRNnBDRUFDbGp1Y3c2WklRZ0FBZ2hLQXVyblRnVlhaR3ZVVGdGcFo0ckFPRzZSbUFsQWZpeHMyWkp2VVNRQUFnaEtBbXJpdmdSSFpMTFVSZ0RwWTBEQVdXNlllQWdBUWxBQlV6cjBNVE1ER3FZRUFWTXNpaG9uWlBsVVRBSUNnQktCQzdsOWdTalpScFFRQUlDZ0JxSW83RnlpRnJWUWRBYWlFSlFzbHNxRXFzaW4xQmRBZTExeTk2UVB2MzVyNktzclI3eGU5M25DbFY2eXNGTDNlc0xkU3JQU0dKMDRVQ3d1RGhjWGh3dEhod3NMZzZPSndZV0Y0Nk5EZzJMRmg2dXVGU1FoQStkeXR0TURzYkRFNzI1bWZQL1h2T21mL0orZi93NHVMdys4ZEdCdzQwRDl3WVBDOUE0UDlUL1lYRnlXaFpMZmQrdEE5OTk2WStpcmFSZ0JnV2hkZTJMbnF3dG1ycmp6VGhvTlBEZmJ1N2UzOVZuL3YzdjV6aHdjSnJ3M1cwZG0rNjVyVTE5QXFrVy8vMi9RSXFFVFBQRHZZczZmM2hmL3BmZU9idllFV1RNY2hvRnhPQUZDdGkzOWc1dWFiNW02K2FXNXhjZmpGTDYzODl4ZDYzOXpiRzNwRVJBYWNBTW9VK2ZhL2NBSVkyZEdGNFdjZVhMNy9nV1V2RlV6QUlhQkUzZ1phbXVEVG45RnR2Nmp6VTIrZi85TS91dkJkdjd6bEpTKzJCOGRqbzVYSUl5QklvOXN0Ym5wajkwMXY2SDcxYTcxLytkZWw3KzdycDc0aXduSDNVUTUzSlV5bTB5bCsrRFdiN3ZqUUJlLzZwUzBYWHRqWitMK0E3VlllQVlEME9wM2lwamQxLy9DdWJXOTl5OXpzS3A4MGdFb0lRQW5jajFDS0xaczdQL3N6bSsrOFk5dExYMkpqYnNDbUs0VjFCbmw1eVl0blB2ejcyMzcwNXJuVUYwTDdDUUJrcDlzdGZ2R2RtOTl6KzVhdFc3MHFRSVVFWUZxT29sVGt1bXU3ZDN6b2drc3Z0VWxYWit0Tno5cUNmRjF5OGN6di9mWUZsKzMydWpDVkVJQ3B1QWVoYWhkZDFQbWQzOXA2eFNzMVlCVTI0SlFFQUhLM1pVdm5BKy9mK3VwWCs5Z21KUk9BeWJuN29EWnpjNTMzM3I3bFpaYzVCNXpMTnB5R0FFQXp6TTkzM3ZmclczZnM4TDRnU2lNQUUzTGZRZjEyN3VpODc3MWI1K1kwNFAreEdTY21BTkFrbDE4KysrNWYyWno2S21nSkFZQ0d1ZTdhN3V0djZLYStDdHBBQUNiaHlFbGFQLzl6bXkrNnlJT2dNMnpKeVFnQU5NKzJDenJ2L0FVUGdwaVdBSXpOdlFZNXVPN2E3blhYZWhCMGhvMDVBUUdBcHZycGQ4elAyTUZNd2ZLQnB0cDE2Y3dOMXpzRU1Ea0JHSTlqSmxsNSswODZCSnhoZTQ3TDJvRUcyN1ZyNXZyWE9RUXdJVjh2UlJ0OCtNN25EeDRjVFBtSGRMdEZ0OXVabis5c3Y2aXpZMGZua290bmR1K2UzZjNTbWNzdW04MzVMdnR0YjVsNytKR1YxRmRCSXduQUdCd3cyMjFscFZoWkdSNC9Qang4dUNpZU9QTi8zN3ExYzlXVnM5ZGQyMzN0ajJ5YW44L3UzZmU3ZDgvdTNqMjdmMzgvOVlWazRiWmJIN3JuM2h0VFgwVmpDQUJzNFBqeDRaZSszUHZTbDN2ejg1MDMzTmo5aWJmTnZXaG5YaWVDMTkvUXZVY0FHRjllNnhoeXRyUTB2UCtCNVE5KzZQbC8rdWVUUzB2RDFKZHp4ZzJ2MjlUSjdtUkNBd2pBcUR6LzRaUit2N2p2MDh0MzNIbnNXOS9LNWFaNzU4NlpxNjUwbW4rQnJUbzZBWUJKUEhkNDhHZC9lZXorQjVaVFg4Z0xYdnRhQVdCc0FnQVRHZ3lLdi8rSGt4Ly81RkxxQ3ltS29yanlDajhXeHRnRVlDUU9sYXpsb3g5YmV2Q3o2YzhCdTNmUGJ0bmlkWUFYMkxBakVnQ1kxdDMvZVBLeHh4Ty9IdERwRkZlODBpR0E4UWdBVEt2WEsvN21iMC8wZW9rdjQxV2VBakVtQVlBU0hEdzR1Ty9UaVY4TWVLVVRBR01TZ0kxNW5zZ29Qdm1wNWVYbGxCOE91UFJTQVRqRHRoMkZBRUE1bmo4Mi9Oem5VMzRuejQ3dG5VM2VDOG80QkFCSzgvQi9wUXhBcDFOY2ZMRWR6UmpjTUVCcEhudXNmK1RJY01lT1pHL0hmT3VXdWU4ZGZ1RmJVZS9ibWY3TnFXVE8vY0lHUEVsa2RELyszTnpDMTZiOVZ1cHBYTERyVEh0dU9UeDMrbDhKTHlraG0zZERUZ0F3cmJNbjdMTjdCeTk3WTdJWFl6ZGZ0UHJoNC9RVk9oWndOZ0dBQ2ExNlozMTBmOG8zQXMxdTN1QWZVQUxPSmdBd3RuVWVxaHg3T21VQU5vMzhlelduL2wrUWdlQUVZRDJlSVhLMlVSNm1IMzgyYlFERysrZGJmeUR3QTJIckV3RFkyT2l2b3c1NnhiQmZkQks5Q3JCcG8wZEFhM0VnaUVrQVlEMFR2SVdtdDFSMHQxWnhMUnVibmU0bmkyVWdHZ0dBMVUzODdzbVV2ODVZeHZNbkdZaERBT0JjVTc1eGZqYmQyKzU3NWYxU3NReEVJQUJ3eHZTZm1acnRKbnNCb0NpS2Z0bGZTQ29EN2VhVHdHdnlGcUJvU3ZuRTdOYUxVLzRzVis5a0pYOXNvejlMYkNPdnd3a0F5aHh3RjF5U05BQ1ZmUisxbzBBckNRQ2hsWDV2dS8zeWxLZnFmalVuZ05Oa29HVThBaUt1S3A1c1hIeGx5aFBBeVNOMWZBeXQwVStFT0pzQUVGUVZVNnd6VTF4eWRjbzk5ZnhUTlgwT1dRUGF3U01nd3FsdWVGMTZ6Y3o4R3QvSFdZL2FBbEI0SE5RS1RnQ3I4ODZCdHFyMDF2WHltMVArS3U5d1dCdzdWUGMzRVRYaUtHQTdyMFVBQ0tUU2FiVmxaK2Z5TjZVTXdJbm5ob05lZ3YvZFJqU0FWWGtFUkFnMURLbXIzN0ZwSnVsK1dqeVE3SXRJUFE1cUtDY0EycStHNmIvajVUTlh2Q1hsN1g5UkZNOStNK1d2VVJhT0FnMGtBTFJjRFZOcGRyNjQ0ZGU2bmRTYjZkQTNFZ2VnMElDbVNiMW1vVXIxektQWDNkN2RjWG5LTi84VVJURWNGTS9zVFIrQVFnTWFSUUJvclhvbTBiWHY3cVo5N2ZlVUkwOE1laWRTWDhUM2FVQlRDQUR0Vk1NTW11a1cxNytuKzZxM3BwLytSVkVjK25yS242SThud1kwZ2dEUVFqVk1uMjI3T2ovMmtibFh2RG1MNlY4VXhmNUgrcWt2NFZ3YWtEOEJXSVdQalRSYTFYTm5wbHRjZmV1bXQvM0YvSXV1eUdYN0hIOW1tTU1yd09mTHB3RTI5YXA4RG9CV3FYVGlkTGNVcjNqejdBL2R1bW5MenNRditaN2ppZi9zbC9KamtGVzQ1ZkNjendka1N3Qm9qNHFtLzl3Rm5VdGZNN1A3aHBuZDE4OG0vTG5IZFR6eDJleWUvNXhOQTdJbEFMVEU5Tk4vcGx2TWRvdE5tenViZDNTMjdDeTIvZURNanBkMWRyeThzK1BsTXlsLzUzMGpoeDhmSE4yWDYvMy85MmxBbmdTQU5yanJJOXRTWDBJeTMvaTNyRy8vVDlPQURPWHlLaFl3Z1lVbmgvcyszNHdBRkRtOUpzd3BBZ0FOdHVlanZXSHVqMy9JbHdCQVV5MGVHSDYzT2JmL3B6Z0VaRVVBb0trZXZiczN6UEhkL3h2UWdId0lBRFRTdm9mN0dYNzZkMFFha0FrQmdPWlpYaHgrOGE5VC9Qb1g3U0lBMER4Zi9OdmV5YVBOZnZIWElTQUhBZ0FOcysvaGZ1WWYvUjJSQmlRbkFOQWtoeDhiUFBKWEs2bXZvalFha0pZQVFHT2NlRzc0MlQ5WjZTK2x2ZzdhUWdDZ0dYcEx4WU4vdkhMaWNMTWYvWi9QSVNBaEFZQUc2QzhYbi92ejVTUGZhZURiL3NtWUFFRHVWbzRYRDl5MWZQQXJyWjMrRGdHcENBQms3ZVRSNFgvY3VmUk1sai80VlNJTlNNTFhRVU8ramowOWZPQ3U1ZWNQdHUyNVA1bHdBb0JNN1gray84bmZEVFQ5SFFMcTV3UUEyZW12RkYvK3U1VnZmNm9Obi9ZaVowNEFrSmVGSjRmM2ZYQXA1dlIzQ0tpWkV3RGtZdVZFc2VkanZiMy8zaHY0bmpkcUlRQ1EzbkJZZk9lQi9xTjNOLzRyM3FibnA0UHJKQUNRMk1HdkRCNjl1M2Y0OFphLzBaTU1lUTFnRmZmY2UyUHFTNkQ5Qml2RjQvZjNQL0diUzUvNWcyWFQvMnhWdkJKZ1U2L0tDUURxZHZMbzhIOC8zZi8ySi9vZStKQ1dBRUJObGhhSCt4OFo3SHVvLy9UWEJrMzhMZDg2ZVNXZ0hnSUExVHAyYVBqVW80TjlEL2VmK3VwZ0dQRzluZVJMQUtCOGl3ZUdoL1lNRG4xOThQU2V3ZkZuUE9jaFV3SUEwMXBhSEM3c0h5N3NIeTQ4T1ZqWVB6enl4TkREL2VsNUNsUURBWUJWRFB0RnYxY01Wb2I5bFdMUUsvckx4YUJYckJ3Zm5qdzZQSG0wT0hsa2VQTEljT25vOE1TUjR0aFR3NlZGNDU1R0VnRGE0T08vc2JUd3BDbmNOZzRCVmZNNUFJQ2dCR0IxUGpZQ3JXRTdyMFVBZ0h6NWZ0QktDUUJBVUFJQUVKUUFBRm56RktnNkFnQVFsQUNzeVRzSG9BVnM1SFVJQUVCUUFnRGt6c3NBRlJFQWdLQUVBQ0FvQVFBSVNnRFc0LzBEMEdpMjhQb0VBR2dBcndOWFFRQUFnaElBZ0tBRVlBT2VJVUpEMmJ3YkVnQ0FvQVFBSUNnQkFBaEtBRGJtU1NMa1lLeDNndHEyb3hBQWdLQUVBQ0FvQVFBSVNnQkc0bmtpTklnTk95SUJBQWhLQUFDQ0VvQlJPVlJDSTlpcW94TUFnS0FFQUNBb0FSaURveVZremlZZGl3QUFCQ1VBQUVFSndIZ2NNQ0ZidHVlNEJBQWdLQUVBQ0VvQXh1YVlDUm15TVNjZ0FBQkJDY0FrM0d0QVZtekp5UWdBMEF6MzdWeE9mUWx0SXdBQVFRbkFoQnc1SVJNMjQ4UUVBQ0FvQVppYyt3NUl6amFjaGdBQUJDVUFVM0gzQVFuWmdGTVNBS0FCdkFlMENnSXdMZmNna0lTdE56MEJBQWhLQUFDQ0VvQVNPSXBDeld5NlVnZ0FrRHV2QUZkRUFNcmhmZ1JxWTd1VlpWUHFDNkE5OW55OTk2dTNMMHp6Sjl4eWVLNnNpd0UyNUFSUUduY2xVQU1iclVRQ1VDWkxjMG9lOVhLK3MxZUZMVll1QVFBSVNnQks1ZzRGS21KemxVNEF5SXVuUUp6TmVxaVVBSlRQZlFxVXpyYXFnZ0FBQkNVQWxYQzNNZzJuZms0NXZSSnNxSW9JUUZVc1dTaUZyVlFkQVNCSERnRllBelVRZ0FxNWM0RXAyVVNWRWdDQW9BU2dXdTVmSnVZSlFHU24vdlp0bjZvSlFPVXNZcGlBalZNREFTQmZEZ0V4K1h1dmpRRFV3YjBNak1XV3FZY0ExTVNDbm95YndXanUyN2xzczlSR0FBQ0NFb0Q2dUsrWmpFTkFIRzcvYXlZQXRiSzRZUjAyU00wRW9HNlcrQVFjQWlLNC9jSHJVbDlDT0FJQUVKUUFKT0FRTUFHSGdIWnorNStFQUtTaEFSUFFnTFl5L1ZNUmdHUTBBRWhMQUdnU2g0RDJjZnVma0FDazVCQUFKQ1FBaVduQXVCd0Myc1R0ZjFvQ2tKNEdqRXNEMnNIMFQwNEFzcUFCNDlLQXBqUDljeUFBQUVFSlFDNGNBc2JsRU5CY2J2OHpJUUFaMFlCeGFVQVRtZjc1RUlDOGFNQzROS0JaVFArc0NFQjJOQUNvaHdEa1NBUEc0aERRRkc3L2N5TUFtZEtBc1doQS9rei9EQWxBdmpSZ0xCcVFNOU0vVHdLUU5RMFlpd2JreWZUUGxnRGtUZ1BHb2dHNU1mMXpKZ0FOb0FGajBZQjhtUDZaRTRCbTBJQ3hhRUFPVFAvOENVQmphTUJZTkNBdDA3OFJCS0JKTkdBc0dwQ0s2ZDhVQXRBd0dqQVdEYWlmNmQ4Z0F0QThHakFXRGFpVDZkOHNBdEJJR2pBV0RhaUg2ZDg0bmUyN3JrbDlEVXpvdGxzZlNuMEpEWFBMNGJuVWw5Qk9SbjlET1FFMG1IUEF1QndGcW1ENk41Y1RRQnM0Q296Rk9hQkVwbitqQ1VCTGFNQzRaR0JLUm44TGVBVFVFaDRIamN2am9HbVkvdTBnQU8yaEFlUFNnTW1ZL3EzaEVWQUxlUncwTG8rRFJtVDB0NHdBdEpNR1RFQUcxbUgwdDVKSFFPM2tjZEFFUEJGYWkrbmZWazRBTGVjb01BRkhnZE9NL25ZVGdQYlRnTWtFejhCOU81ZWRJMXRQQUVMUWdJa0Z6TUNwUjJHbWZ3UUNFSWdNVEN4SUJveithQVFnRmcyWVJvc3pjUG9GY05NL0ZBR0lTQWFtMUpvU25QM0dKNk0vSUFFSVNnT20xK2dNblBPZVY5TS9KZ0VJVFFaSzBhQVNuUDlaQjZNL01nRkFCa3FUYlFsVy9ZeWIwWThBVUJRYVVJSGtNVmovZzgybVA0VUFjRFlacUU0TlBSanhxeXlNZms0VEFNNGxBN1dadUFxVGZXMlIwYzg1QklEVnlVQ2JHUDJzeXJlQnNqb2pvelg4VmJJV0p3QTI0Q2pRWEVZLzZ4TUFSaUlEeldMME13b0JZRHhLa0ROem43RUlBSk9RZ2R3WS9VeEFBSmljRE9UQTZHZGlBc0MwWkNBVm81OHBDUUNsVVlKNm1QdVVSUUFvbVF4VXgraW5YQUpBVlpTZ0xPWStGUkVBS3FjRWt6SDNxWm9BVUI4bEdJVzVUMjBFZ0FTVTRIem1QdlVUQUJLTEhBTkRuN1FFZ0l4RWlJR2hUejRFZ0V5MUtRYUdQbmtTQUJxaktVa3c3bWtLQWFEQmNraUNjVTl6Q1FEdFZHNGJUSGxhU1FBQWd2S2J3QUJCQ1FCQVVBSUFFSlFBQUFRbEFBQkJDUUJBVUFJQUVKUUFBQVFsQUFCQkNRQkFVQUlBRUpRQUFBUWxBQUJCQ1FCQVVBSUFFSlFBQUFRbEFBQkJDUUJBVUFJQUVKUUFBQVFsQUFCQkNRQkFVQUlBRUpRQUFBUWxBQUJCQ1FCQVVBSUFFSlFBQUFRbEFBQkJDUUJBVUFJQUVKUUFBQVFsQUFCQkNRQkFVQUlBRUpRQUFBUWxBQUJCQ1FCQVVBSUFFSlFBQUFRbEFBQkJDUUJBVUFJQUVKUUFBQVFsQUFCQkNRQkFVQUlBRUpRQUFBUWxBQUJCQ1FCQVVBSUFFSlFBQUFRbEFBQkJDUUJBVUFJQUVKUUFBQVFsQUFCQkNRQkFVQUlBRUpRQUFBUWxBQUJCQ1FCQVVBSUFFSlFBQUFRbEFBQkJDUUJBVUFJQUVKUUFBQVFsQUFCQkNRQkFVQUlBRUpRQUFBUWxBQUJCQ1FCQVVBSUFFSlFBQUFRbEFBQkJDUUJBVUFJQUVKUUFBQVFsQUFCQkNRQkFVQUlBRUpRQUFBUWxBQUJCQ1FCQVVBSUFFSlFBQUFRbEFBQkJDUUJBVUFJQUVOVC9BYktmNnE3RjloVDVBQUFBQUVsRlRrU3VRbUNDIiwgInNpemVzIjogIjUxMng1MTIiLCAidHlwZSI6ICJpbWFnZS9wbmcifV19">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>PersonaFate — Know Yourself</title>
+<style>
+  /* ================= THEMES ================= */
+  :root, [data-theme="dark"]{
+    --bg1:#0f172a; --bg2:#1e1b4b; --card:#1e293b; --text:#e2e8f0; --muted:#94a3b8;
+    --accent:#6366f1; --accent2:#a855f7; --bad:#ef4444;
+    --input:#0b1220; --border:#334155;
+  }
+  [data-theme="light"]{
+    --bg1:#e0e7ff; --bg2:#f5f3ff; --card:#ffffff; --text:#1e293b; --muted:#64748b;
+    --accent:#4f46e5; --accent2:#9333ea; --bad:#dc2626;
+    --input:#f1f5f9; --border:#cbd5e1;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',system-ui,sans-serif}
+  body{
+    background:linear-gradient(135deg,var(--bg1),var(--bg2));
+    min-height:100vh; color:var(--text);
+    /* NOTCH-SAFE: respect device safe areas */
+    padding-top:env(safe-area-inset-top);
+    padding-bottom:env(safe-area-inset-bottom);
+    padding-left:env(safe-area-inset-left);
+    padding-right:env(safe-area-inset-right);
+  }
+  /* Theme toggle pinned into the notch/status area */
+  .topbar{
+    position:sticky; top:0; z-index:50;
+    display:flex; justify-content:space-between; align-items:center;
+    padding:calc(env(safe-area-inset-top,0px) + 10px) 16px 10px;
+    background:color-mix(in srgb, var(--card) 85%, transparent);
+    backdrop-filter:blur(12px);
+  }
+  .topbar h1{font-size:1.05rem}
+  .theme-btn{
+    width:auto; margin:0; padding:7px 14px; font-size:.85rem; border-radius:999px;
+    background:var(--input); color:var(--text); border:1px solid var(--border);
+  }
+  .wrap{display:flex;align-items:center;justify-content:center;min-height:calc(100vh - 60px);padding:20px}
+  .app{width:100%;max-width:520px;background:var(--card);border-radius:20px;
+       padding:28px;box-shadow:0 20px 60px rgba(0,0,0,.35);margin:auto}
+  h2{font-size:1.15rem;margin-bottom:4px}
+  .sub{color:var(--muted);font-size:.9rem;margin-bottom:22px}
+  label{display:block;font-size:.85rem;color:var(--muted);margin:14px 0 6px}
+  input,textarea,select{width:100%;padding:11px 14px;border-radius:10px;border:1px solid var(--border);
+       background:var(--input);color:var(--text);font-size:.95rem;outline:none}
+  input:focus,textarea:focus{border-color:var(--accent)}
+  button{width:100%;padding:12px;border:none;border-radius:10px;margin-top:20px;
+       background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;
+       font-size:1rem;font-weight:600;cursor:pointer;transition:.2s}
+  button:hover{opacity:.9;transform:translateY(-1px)}
+  .link{background:none;color:var(--accent);width:auto;margin:14px 0 0;padding:0;font-size:.85rem}
+  .hidden{display:none}
+  .err{color:var(--bad);font-size:.85rem;margin-top:8px;min-height:1.2em}
+  .steps{display:flex;gap:6px;margin-bottom:24px}
+  .steps div{flex:1;height:5px;border-radius:3px;background:var(--border);transition:.3s}
+  .steps div.done{background:linear-gradient(90deg,var(--accent),var(--accent2))}
+  .avatar-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+  .swatch{width:44px;height:44px;border-radius:50%;cursor:pointer;border:3px solid transparent}
+  .swatch.sel{border-color:var(--text)}
+  .avatar-preview{width:90px;height:90px;border-radius:50%;margin:10px auto;display:flex;
+       align-items:center;justify-content:center;font-size:2rem;font-weight:700;color:#fff}
+  .q{margin:14px 0;padding:14px;border-radius:12px;background:var(--input);border:1px solid var(--border)}
+  .q p{font-size:.92rem;margin-bottom:10px}
+  .q label{display:inline-flex;align-items:center;gap:6px;margin:4px 12px 4px 0;
+       font-size:.83rem;color:var(--text);cursor:pointer}
+  .q input{width:auto}
+  .badge{display:inline-block;padding:4px 12px;border-radius:999px;font-size:.8rem;
+       background:color-mix(in srgb, var(--accent) 20%, transparent);color:var(--accent);margin:4px}
+  .result-card{background:var(--input);border:1px solid var(--border);border-radius:14px;padding:20px;margin-top:14px}
+  .result-card h3{margin-bottom:8px;color:var(--accent2)}
+  .bar{height:8px;border-radius:4px;background:var(--border);overflow:hidden;margin:6px 0 12px}
+  .bar div{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+  .fine{color:var(--muted);font-size:.75rem;margin-top:16px;line-height:1.5}
+  .card-mini{background:var(--input);border:1px solid var(--border);border-radius:12px;padding:14px;margin-top:14px;font-size:.85rem}
+  .card-mini b{color:var(--accent)}
+</style>
+</head>
+<body>
+
+<!-- ================= TOP BAR (notch zone) ================= -->
+<header class="topbar">
+  <h1>🌌 PersonaFate</h1>
+  <button class="theme-btn" id="themeBtn" onclick="toggleTheme()">☀️ Light</button>
+</header>
+
+<div class="wrap"><div class="app">
+  <div class="steps" id="steps"><div></div><div></div><div></div><div></div></div>
+
+  <!-- ============ STAGE 1: AUTH ============ -->
+  <section id="view-auth">
+    <h2>Create account</h2>
+    <p class="sub">Discover who you are — and where you're headed.</p>
+    <div id="auth-signup">
+      <label>Full name</label><input id="su-name" placeholder="Ada Lovelace">
+      <label>Email</label><input id="su-email" type="email" placeholder="you@example.com">
+      <label>Username</label><input id="su-user" placeholder="ada_2026">
+      <label>Password (min 6 chars)</label><input id="su-pass" type="password">
+      <div class="err" id="su-err"></div>
+      <button onclick="signup()">Sign Up</button>
+      <button class="link" onclick="toggleAuth()">Already signed in? Log in →</button>
+    </div>
+    <div id="auth-login" class="hidden">
+      <h2>Welcome back</h2>
+      <label>Username</label><input id="li-user">
+      <label>Password</label><input id="li-pass" type="password">
+      <div class="err" id="li-err"></div>
+      <button onclick="login()">Log In</button>
+      <button class="link" onclick="toggleAuth()">New here? Sign up →</button>
+    </div>
+  </section>
+
+  <!-- ============ STAGE 2: PROFILE ============ -->
+  <section id="view-profile" class="hidden">
+    <h2>Build your profile ✨</h2>
+    <p class="sub">Make it yours.</p>
+    <div class="avatar-preview" id="avatarPrev">A</div>
+    <label>Avatar color</label>
+    <div class="avatar-row" id="swatches"></div>
+    <label>Bio / Tagline</label>
+    <textarea id="pf-bio" rows="3" placeholder="Dreamer. Coder. Coffee-powered."></textarea>
+    <label>Favorite hobby</label>
+    <select id="pf-hobby">
+      <option>Reading</option><option>Gaming</option><option>Sports</option>
+      <option>Music</option><option>Travel</option><option>Art</option><option>Science</option>
+    </select>
+    <div class="err" id="pf-err"></div>
+    <button onclick="saveProfile()">Continue to Personality Quiz →</button>
+  </section>
+
+  <!-- ============ STAGE 3: QUIZ ============ -->
+  <section id="view-quiz" class="hidden">
+    <h2>Who are you, really? 🧠</h2>
+    <p class="sub" id="quiz-count"></p>
+    <div id="quiz-box"></div>
+    <div class="err" id="qz-err"></div>
+    <button onclick="submitQuiz()">Reveal My Fate →</button>
+  </section>
+
+  <!-- ============ STAGE 4: RESULTS ============ -->
+  <section id="view-result" class="hidden">
+    <h2>Your PersonaFate Report 🔮</h2>
+    <p class="sub">Generated from your quiz + web import.</p>
+
+    <!-- Reddit public import panel (no app registration needed) -->
+    <div class="card-mini" id="reddit-panel">
+      <b>🔗 Import from Reddit (optional)</b>
+      <p style="margin:8px 0;color:var(--muted)">Type your Reddit username — we'll read your public profile &amp; recent activity. No login or app setup needed.</p>
+      <input id="rd-user" placeholder="Your Reddit username, e.g. spez" style="margin-top:6px">
+      <button onclick="importReddit()" style="margin-top:10px">Import My Reddit Data</button>
+    </div>
+
+    <div id="result-box"></div>
+    <p class="fine" id="import-note"></p>
+    <button class="link" onclick="logout()">Log out</button>
+  </section>
+</div></div>
+
+<script>
+/* ================= THEME ================= */
+function applyTheme(t){
+  document.documentElement.setAttribute('data-theme',t);
+  localStorage.setItem('pf_theme',t);
+  document.getElementById('themeBtn').textContent = t==='dark' ? '☀️ Light' : '🌙 Dark';
+  document.querySelector('meta[name=theme-color]').content = t==='dark' ? '#0f172a' : '#e0e7ff';
+}
+function toggleTheme(){ applyTheme(document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark'); }
+applyTheme(localStorage.getItem('pf_theme')||'dark');
+
+
+/* ================= SECURITY: SHA-256 + salt ================= */
+async function hashPass(p, salt){
+  const data = new TextEncoder().encode(salt + '::' + p);
+  const buf = await crypto.subtle.digest('SHA-256', data);
+  return [...new Uint8Array(buf)].map(b=>b.toString(16).padStart(2,'0')).join('');
+}
+
+/* ================= STORAGE ================= */
+const DB = {
+  users(){ return JSON.parse(localStorage.getItem('pf_users')||'{}'); },
+  saveUsers(u){ localStorage.setItem('pf_users', JSON.stringify(u)); },
+  session(){ return localStorage.getItem('pf_session'); },
+  setSession(u){ localStorage.setItem('pf_session', u); },
+  me(){ const s=this.session(); return s? this.users()[s] : null; },
+  saveMe(d){ const u=this.users(); u[this.session()]=d; this.saveUsers(u); }
+};
+
+/* ================= NAV ================= */
+function go(view, step){
+  ['auth','profile','quiz','result'].forEach(v=>
+    document.getElementById('view-'+v).classList.toggle('hidden', v!==view));
+  document.querySelectorAll('#steps div').forEach((el,i)=> el.classList.toggle('done', i<step));
+}
+
+/* ================= AUTH ================= */
+function toggleAuth(){
+  document.getElementById('auth-signup').classList.toggle('hidden');
+  document.getElementById('auth-login').classList.toggle('hidden');
+}
+async function signup(){
+  const n=document.getElementById('su-name').value.trim(),
+        e=document.getElementById('su-email').value.trim(),
+        u=document.getElementById('su-user').value.trim(),
+        p=document.getElementById('su-pass').value, err=document.getElementById('su-err');
+  if(!n||!e||!u||p.length<6){ err.textContent='Fill all fields; password ≥ 6 chars.'; return; }
+  const users=DB.users();
+  if(users[u]){ err.textContent='Username taken.'; return; }
+  const salt = Math.random().toString(36).slice(2);
+  users[u]={name:n,email:e,pass:await hashPass(p,salt),salt:salt,profile:{},quiz:null,import:null};
+  DB.saveUsers(users); DB.setSession(u); enterProfile();
+}
+async function login(){
+  const u=document.getElementById('li-user').value.trim(),
+        p=document.getElementById('li-pass').value, err=document.getElementById('li-err');
+  const me=DB.users()[u];
+  if(!me||me.pass!==await hashPass(p, me.salt||'')){ err.textContent='Invalid credentials.'; return; }
+  DB.setSession(u);
+  me.quiz ? showResult() : (me.profile.bio!==undefined ? go('quiz',3) : enterProfile());
+}
+function logout(){ localStorage.removeItem('pf_session'); location.reload(); }
+
+/* ================= PROFILE ================= */
+const COLORS=['#6366f1','#a855f7','#22c55e','#f59e0b','#ef4444','#06b6d4','#ec4899','#84cc16'];
+let picked=COLORS[0];
+function enterProfile(){
+  go('profile',2);
+  const me=DB.me();
+  document.getElementById('avatarPrev').style.background=me.profile.color||COLORS[0];
+  document.getElementById('avatarPrev').textContent=me.name[0].toUpperCase();
+  const sw=document.getElementById('swatches'); sw.innerHTML='';
+  COLORS.forEach(c=>{
+    const d=document.createElement('div'); d.className='swatch'+(c===picked?' sel':'');
+    d.style.background=c;
+    d.onclick=()=>{picked=c; document.getElementById('avatarPrev').style.background=c;
+      document.querySelectorAll('.swatch').forEach(s=>s.classList.remove('sel')); d.classList.add('sel');};
+    sw.appendChild(d);
+  });
+}
+function saveProfile(){
+  const bio=document.getElementById('pf-bio').value.trim(),
+        hobby=document.getElementById('pf-hobby').value;
+  if(!bio){ document.getElementById('pf-err').textContent='Write a short bio.'; return; }
+  const me=DB.me(); me.profile={color:picked,bio,hobby}; DB.saveMe(me);
+  buildQuiz(); go('quiz',3);
+}
+
+/* ================= QUIZ (16 questions) ================= */
+const QUESTIONS=[
+ {q:"At a party, you usually…", a:["Work the whole room","Find one deep conversation","People-watch from a corner","Leave early, happily"]},
+ {q:"Big decisions are driven by…", a:["Cold logic","Gut instinct","Advice from people I trust","Whatever feels exciting now"]},
+ {q:"Your ideal weekend is…", a:["An unplanned adventure","Cozy indoors with a book or game","Learning a new skill","Back-to-back social plans"]},
+ {q:"Under heavy stress, you…", a:["Plan harder","Shut down and recharge","Talk it out with someone","Pretend it's fine"]},},
+ {q:"You place the most trust in…", a:["Data and evidence","My intuition","Personal experience","Very little, honestly"]},
+ {q:"Your Reddit browsing style is…", a:["Lurk and absorb","Debate fiercely in comments","Memes and shitposts only","Frequent poster"]},
+ {q:"Money, for you, is mostly for…", a:["Security and freedom","Experiences and memories","Status and leverage","Helping others"]},
+ {q:"Close friends would call you…", a:["The leader","The deep thinker","The chaos agent","The emotional anchor"]},
+ {q:"Fate is…", a:["What we make of it","Written in the stars","Random chaos","A feedback loop of choices"]},
+ {q:"In 10 years, you see yourself as…", a:["Running something big","A quiet master of a craft","A known creator","Completely free, no plan"]},
+ {q:"A stranger disagrees with you online. You…", a:["Debate with sources","Drop one witty reply and move on","Ignore entirely","Get genuinely upset"]},
+ {q:"Your perfect vacation is…", a:["Solo, off the grid","With a close friend or partner","A big group trip","A skills retreat or workshop"]},
+ {q:"When learning something new, you…", a:["Read the manual first","Dive in and break things","Watch someone else first","Learn only if it's fun"]},
+ {q:"Conflict with a friend usually ends with…", a:["A structured talk","Space, then reconnecting","Drama, then making up","Me apologizing first"]},
+ {q:"Your phone home screen is…", a:["Minimal and organized","Aesthetic chaos","Folders for everything","Honestly a mess"]},
+ {q:"If an app could predict your future, you'd…", a:["Want the data, not the prophecy","Try it for fun","Be secretly terrified","Use it to plan everything"]}
+];
+let scores;
+function buildQuiz(){
+  scores=[0,0,0,0];
+  document.getElementById('quiz-count').textContent=`${QUESTIONS.length} questions — your fate depends on honesty.`;
+  const box=document.getElementById('quiz-box'); box.innerHTML='';
+  QUESTIONS.forEach((Q,i)=>{
+    const div=document.createElement('div'); div.className='q';
+    div.innerHTML=`<p><b>Q${i+1}.</b> ${Q.q}</p>`+
+      Q.a.map((t,j)=>`<label><input type="radio" name="q${i}" value="${j}">${t}</label>`).join('');
+    box.appendChild(div);
+  });
+}
+function submitQuiz(){
+  let answered=0; scores=[0,0,0,0];
+  QUESTIONS.forEach((_,i)=>{
+    const sel=document.querySelector(`input[name=q${i}]:checked`);
+    if(sel){ scores[+sel.value]++; answered++; }
+  });
+  if(answered<QUESTIONS.length){ document.getElementById('qz-err').textContent=`Answer all ${QUESTIONS.length} questions (${answered} done).`; return; }
+  document.getElementById('qz-err').textContent='';
+  const me=DB.me(); me.quiz=scores; DB.saveMe(me);
+  analyze(false);
+}
+const TRAITS=["🧭 The Strategist","🎨 The Dreamer","🔥 The Trailblazer","💛 The Guardian"];
+function fateText(s, hobby, web){
+  const total=s.reduce((a,b)=>a+b,0)||1, top=s.indexOf(Math.max(...s));
+  let fate;
+  if(top===0) fate=`Your analytical streak plus '${hobby}' points to a future solving hard problems — a leadership pivot is likely by 2029.`;
+  else if(top===1) fate=`Your imagination and '${hobby}' suggest you'll build something people love — a creative breakthrough arrives within 3 years.`;
+  else if(top===2) fate=`Bold and restless, your '${hobby}' energy means an unexpected adventure reshapes your path around 2028.`;
+  else fate=`Your empathy is your compass; '${hobby}' becomes the bridge to a community that defines your next decade.`;
+  if(web) fate+=` Your imported Reddit footprint reinforces a ${web.dominant} leaning (${web.sample}${web.karma!=null?', karma: '+web.karma:''}).`;
+  return {trait:TRAITS[top], fate, top, total};
+}
+function showResult(){
+  const me=DB.me(), s=me.quiz, r=fateText(s, me.profile.hobby, me.import);
+  document.getElementById('result-box').innerHTML=`
+    <div style="text-align:center;margin-bottom:10px">
+      <div class="avatar-preview" style="background:${me.profile.color||'#6366f1'};width:70px;height:70px;font-size:1.5rem">${me.name[0].toUpperCase()}</div>
+      <h2>${me.name}</h2>
+      <p style="color:var(--muted);font-size:.85rem">${me.profile.bio||''}</p>
+      <span class="badge">${r.trait}</span><span class="badge">Hobby: ${me.profile.hobby}</span>
+    </div>
+    <div class="result-card">
+      <h3>Trait balance</h3>
+      ${["Strategic","Creative","Bold","Empathic"].map((t,i)=>
+        `<div style="font-size:.8rem;color:var(--muted)">${t}: ${Math.round(s[i]/r.total*100)}%</div>
+         <div class="bar"><div style="width:${s[i]/r.total*100}%"></div></div>`).join('')}
+      <h3 style="margin-top:12px">🔮 Your fate</h3>
+      <p style="font-size:.95rem;line-height:1.6">${r.fate}</p>
+    </div>`;
+  const n=document.getElementById('import-note');
+  if(me.import){
+    n.textContent = me.import.live
+      ? `✅ Real data imported from Reddit via OAuth (${me.import.sample}).`
+      : `⚠️ Web import simulated — connect Reddit above or run with a CORS-enabled relay for live data.`;
+  }
+  go('result',4);
+}
+
+/* ================= REDDIT PUBLIC IMPORT =================
+   No OAuth, no app registration. Reddit's public JSON endpoints
+   (/user/<name>/about.json & /overview.json) are open to anyone.
+   Browsers block them via CORS, so we route through corsproxy.io. */
+const prox = u => 'https://corsproxy.io/?url=' + encodeURIComponent(u);
+async function importReddit(){
+  const u = document.getElementById('rd-user').value.trim().replace(/^\/?u\//,'');
+  const note = document.getElementById('import-note');
+  if(!u){ note.textContent = 'Type your Reddit username first.'; return; }
+  note.textContent = 'Fetching public Reddit data for u/'+u+' …';
+  try{
+    const about = await (await fetch(prox(`https://www.reddit.com/user/${u}/about.json`))).json();
+    const me = about.data || {};
+    if(!me.name) throw new Error('not found');
+    let karma = me.total_karma ?? (me.link_karma||0)+(me.comment_karma||0);
+    // vibe from karma + account age
+    const ageDays = (Date.now()/1000 - (me.created_utc||Date.now()/1000)) / 86400;
+    let dominant = karma > 50000 ? 'bold, expressive' :
+                   ageDays > 2000 ? 'steady, observant' :
+                   karma > 5000   ? 'engaged, community-driven' : 'quiet, curious';
+    // keyword scan of recent posts/comments
+    let top = null;
+    try{
+      const ov = await (await fetch(prox(`https://www.reddit.com/user/${u}/overview.json?limit=25`))).json();
+      const texts = JSON.stringify(ov).toLowerCase();
+      const keys = { analytical:['data','research','study','science','logic','code','math'],
+                     creative:['art','music','design','story','writing','film','draw'],
+                     adventurous:['travel','trip','hike','game','adventure','new','try'],
+                     supportive:['help','advice','thank','sorry','support','love','hope']};
+      let bestN = 0;
+      for(const k in keys){ const n = keys[k].filter(w=>texts.includes(w)).length; if(n>bestN){bestN=n; top=k;} }
+    }catch(e){}
+    const d = DB.me();
+    d.import = { sample:'live public Reddit data', dominant: top||dominant,
+                 karma, handle: me.name,
+                 age: Math.round(ageDays/365) + 'y old account', live:true };
+    DB.saveMe(d); showResult();
+    document.getElementById('import-note').textContent =
+      `✅ Imported u/${me.name} — ${karma.toLocaleString()} karma, ${d.import.age}.`;
+  }catch(e){
+    document.getElementById('import-note').textContent =
+      "Couldn't reach Reddit (user private, blocked, or proxy down) — simulation used instead.";
+    analyze();
+  }
+}
+async function analyze(){
+  const me=DB.me();
+  const vibes=['analytical','creative','adventurous','supportive'];
+  me.import = { sample:'simulated web footprint',
+                dominant: vibes[(me.quiz||[0]).indexOf(Math.max(...(me.quiz||[0])))],
+                karma:null, live:false };
+  DB.saveMe(me); showResult();
+}
+/* ================= PWA: service worker ================= */
+if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(()=>{});
+
+/* ================= BOOT ================= */
+buildQuiz();
+if(DB.session() && DB.me()){ const m=DB.me(); m.quiz? showResult() : (m.profile.bio!==undefined? go('quiz',3):enterProfile()); }
+else go('auth',1);
+</script>
+</body>
+</html>
